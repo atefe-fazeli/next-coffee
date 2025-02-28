@@ -1,7 +1,10 @@
 import React from "react";
 
 function PageHeader() {
-  return <div>PageHeader</div>;
+  return (
+    <div>
+    </div>
+  );
 }
 
 export default PageHeader;
