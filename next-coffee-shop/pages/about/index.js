@@ -1,3 +1,6 @@
+import PageHeader from "@/components/modules/PageHeader/PageHeader";
+
 export default function About() {
-  return <>about page </>;
+  return <>
+  <PageHeader title="About"/> </>;
 }
