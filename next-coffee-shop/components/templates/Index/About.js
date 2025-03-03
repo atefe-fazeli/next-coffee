@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import styles from "../../../styles/Home.module.css";
 export class About extends Component {
   render() {
     return (
@@ -38,7 +37,7 @@ export class About extends Component {
               <div class="position-relative h-100">
                 <img
                   class="position-absolute w-100 h-100"
-                  src="/imgages/about.png"
+                  src="/images/about.png"
                   style={{ objectFit: "cover" }}
                 />
               </div>
