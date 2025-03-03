@@ -1,6 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Offer() {
+  const [email, setImail] = useState("");
+  function emailHandler(e) {
+    setImail(e.target.value);
+  }
+  async function submitHandler(e) {
+    e.preventDefault();
+    const res = await fetch("http://localhost:4000/newsLetters", {
+      method: "POST",
+      headers: {
+        "Content-Type": "aplication/json",
+      },
+      body: JSON.stringify({ email }),
+    });
+    if (res.status == "201") {
+      alert("email send sucssesfully");
+      setImail("");
+    }
+  }
   return (
     <div class="offer container-fluid my-5 py-5 text-center position-relative overlay-top overlay-bottom">
       <div class="container py-5">
@@ -15,14 +33,17 @@ function Offer() {
               type="text"
               class="form-control p-4"
               placeholder="Your Email"
-              style={{height: "60px"}}
+              style={{ height: "60px" }}
+              value={email}
+              onChange={(e) => emailHandler(e)}
             />
             <div class="input-group-append">
               <button
                 class="btn btn-primary font-weight-bold px-4"
                 type="submit"
+                onClick={(e) => submitHandler(e)}
               >
-                Sign Up
+                join
               </button>
             </div>
           </div>
