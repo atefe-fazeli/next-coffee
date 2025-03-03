@@ -1,36 +1,6 @@
 import ServiceItem from "@/components/modules/ServiceItem/ServiceItem";
 import React from "react";
-const data = [
-  {
-    id: 1,
-    title: "Fastest Door Delivery",
-    desc: "Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea etet lorem dolor sed est sit invidunt, dolore tempor diam ipsumtakima erat tempor",
-    img: "img/service-1.jpg",
-    icon: "Fastest Door Delivery",
-  },
-  {
-    id: 2,
-    title: "Fastest Door Delivery",
-    desc: "Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea etet lorem dolor sed est sit invidunt, dolore tempor diam ipsumtakima erat tempor",
-    img: "img/service-1.jpg",
-    icon: "Fastest Door Delivery",
-  },
-  {
-    id: 3,
-    title: "Fastest Door Delivery",
-    desc: "Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea etet lorem dolor sed est sit invidunt, dolore tempor diam ipsumtakima erat tempor",
-    img: "img/service-1.jpg",
-    icon: "Fastest Door Delivery",
-  },
-  {
-    id: 4,
-    title: "Fastest Door Delivery",
-    desc: "Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea etet lorem dolor sed est sit invidunt, dolore tempor diam ipsumtakima erat tempor",
-    img: "img/service-1.jpg",
-    icon: "Fastest Door Delivery",
-  },
-];
-function Services() {
+function Services({ services }) {
   return (
     <div class="container-fluid pt-5">
       <div class="container">
@@ -44,7 +14,7 @@ function Services() {
           <h1 class="display-4">Fresh & Organic Beans</h1>
         </div>
         <div class="row">
-          {data.map((item) => (
+          {services.map((item) => (
             <ServiceItem key={item.id} {...item} />
           ))}
         </div>

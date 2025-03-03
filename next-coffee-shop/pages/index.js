@@ -6,16 +6,22 @@ import Slider from "@/components/templates/Index/Slider";
 import Testimonial from "@/components/templates/Index/Testimonial";
 import ReservationDetail from "@/components/templates/Index/reservation";
 
-export default function Home() {
+export default function Home({data}) {
   return (
     <>
     <Slider/>
     <About/>
-    <Services/>
+    <Services services={data.services}/>
     <Offer/>
     <Menu/>
     <ReservationDetail/>
     <Testimonial/>
     </>
   );
+}
+export async function getStaticProps(){
+  const res=await fetch('http://localhost:4000/services')
+const services=await res.json()
+
+  return{props:{data:{services}}}
 }
