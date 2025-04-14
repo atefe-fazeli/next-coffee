@@ -15,7 +15,7 @@ export default function Home({ data }) {
       <Offer />
       <Menu menu={data.menu} />
       <ReservationDetail />
-      <Testimonial />
+      <Testimonial data={data.testimonial}/>
     </>
   );
 }
@@ -24,5 +24,7 @@ export async function getStaticProps() {
   const services = await res1.json();
   const res2 = await fetch("http://localhost:4000/menu");
   const menu = await res2.json();
-  return { props: { data: { services, menu } } };
+  const res3 = await fetch("http://localhost:4000/comments");
+  const testimonial = await res3.json();
+  return { props: { data: { services, menu,testimonial } } };
 }
