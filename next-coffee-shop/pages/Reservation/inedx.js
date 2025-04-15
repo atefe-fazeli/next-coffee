@@ -1,7 +1,14 @@
+import PageHeader from "@/components/modules/PageHeader/PageHeader";
+import ReservationDetail from "@/components/templates/Reservation/ReservationDetail";
 import React from "react";
 
 function Reservation() {
-  return <h1>Reservation Page</h1>;
+  return (
+    <>
+      <PageHeader title="Reservation" />
+      <ReservationDetail />
+    </>
+  );
 }
 
 export default Reservation;
