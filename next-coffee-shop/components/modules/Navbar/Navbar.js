@@ -40,13 +40,13 @@ function Navbar() {
               Menu
             </Link>
             <div className={`${styles.dropdown}`}>
-              <Link
-                href="#"
+              <p
+               
                 className={`${styles.nav_link} ${styles.dropdown_toggle}`}
                 data-toggle="dropdown"
               >
                 Pages
-              </Link>
+              </p>
               <div className={`${styles.dropdown_menu} ${styles.text_capitalize}`}>
                 <Link href="/reservation" className={`${styles.dropdown_item}`}>
                   Reservation
