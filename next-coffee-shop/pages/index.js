@@ -5,8 +5,10 @@ import Services from "@/components/templates/Index/Services";
 import Slider from "@/components/templates/Index/Slider";
 import Testimonial from "@/components/templates/Index/Testimonial";
 import ReservationDetail from "@/components/templates/Index/reservation";
+import axios from "axios";
 
 export default function Home({ data }) {
+  console.log("services",data.services)
   return (
     <>
       <Slider />
@@ -20,8 +22,9 @@ export default function Home({ data }) {
   );
 }
 export async function getStaticProps() {
-  const res1 = await fetch("http://localhost:4000/services");
-  const services = await res1.json();
+  const response = await axios.get("http://localhost:4000/services")
+ 
+  const services = response.data
   const res2 = await fetch("http://localhost:4000/menu");
   const menu = await res2.json();
   const res3 = await fetch("http://localhost:4000/comments");

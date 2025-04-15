@@ -5,13 +5,11 @@ function Menu({ menu }) {
   let hotMenu=[]
   menu.map(item=>{
     if(item.type=="cold"){
-      console.log(item)
       coldMenu=[...coldMenu,item]
     }else{
       hotMenu=[...hotMenu,item]
     }
   })
-  console.log(coldMenu,hotMenu,"menus")
   return (
     <div class="container-fluid pt-5">
       <div class="container">

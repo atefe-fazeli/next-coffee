@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 function PageHeader({title}) {
-  console.log(title,"here")
+
   return (
     <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
       <div
